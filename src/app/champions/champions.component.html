@@ -1,0 +1,11 @@
+<h2>My Champions</h2>
+<ul class="heroes">
+  <li *ngFor="let champion of champs">
+    <button [class.selected]="champion === selectChampion" type="button" (click)="onSelect(champion)">
+      <span class="badge">{{champion.id}}</span>
+      <span class="name">{{champion.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<app-champion-detail [champion]="selectChampion"></app-champion-detail>
